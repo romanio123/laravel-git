@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/my_page', function () {
-    return 'its my page';
+    return 'its my pages';
 });
+
+Route::get('/posts', 'PostController@index');
 

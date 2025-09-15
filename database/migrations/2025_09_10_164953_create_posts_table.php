@@ -17,6 +17,10 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
+            $table->text('content');
+            $table->string('image')->nullable();
+            $table->unsignedBigInteger('likes')->nullable();
+            $table->boolean('is_published')->nullable(1);
         });
     }
 
