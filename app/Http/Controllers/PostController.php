@@ -33,9 +33,32 @@ class PostController extends Controller
         ];
 
         foreach ($postsArr as $arr){
-            Post::create($arr);
+            Post::create([
+                [
+                    'title' => $arr['title'],
+                    'content' => $arr['content'],
+                    'image' => $arr['image'],
+                    'likes' => $arr['likes'],
+                    'is_published' => $arr['is_published'],
+                ]
+            ]);
         }
 
         dd('created');
+    }
+
+    public function update()
+    {
+        $post = Post::find(5);
+
+        $post->update([
+            'title' => 'updated',
+            'content' => 'updated',
+            'image' => 'updated',
+            'likes' => 213,
+            'is_published' => 0
+        ]);
+
+        dd('updated');
     }
 }
