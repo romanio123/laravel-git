@@ -33,15 +33,7 @@ class PostController extends Controller
         ];
 
         foreach ($postsArr as $arr){
-            Post::create([
-                [
-                    'title' => $arr['title'],
-                    'content' => $arr['content'],
-                    'image' => $arr['image'],
-                    'likes' => $arr['likes'],
-                    'is_published' => $arr['is_published'],
-                ]
-            ]);
+            Post::create($arr);
         }
 
         dd('created');
@@ -60,5 +52,12 @@ class PostController extends Controller
         ]);
 
         dd('updated');
+    }
+
+    public function delete()
+    {
+        $post = Post::withTrashed()->find(2);
+        $post->restore();
+        dd('deleted');
     }
 }
