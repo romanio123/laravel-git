@@ -1,10 +1,39 @@
 @extends('layouts.main')
 @section('content')
-    <div>
-        @foreach($posts as $post)
-            <div>{{ $post->title }}</div>
-            <div>{{ $post->content }}</div>
-            <div>{{ $post->likes }}</div>
-        @endforeach
+<div class="container">
+    <div class="row">
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>romanio</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>@social</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+</div>
 @endsection
