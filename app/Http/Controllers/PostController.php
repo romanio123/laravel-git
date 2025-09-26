@@ -8,9 +8,15 @@ class PostController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         $post = Post::where('is_published', 1)->first();
         dump($post->title);
         dd('end');
+=======
+        $posts = Post::all();
+        return view('post', compact('posts'));
+
+>>>>>>> master
     }
 
     public function create()
